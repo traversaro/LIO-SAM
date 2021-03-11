@@ -83,6 +83,8 @@ link_directories(
 
 # Range Image Projection
 add_executable(${PROJECT_NAME}_imageProjection src/imageProjection.cpp)
+get_target_property(imageProjection_INCLUDE_DIRS ${PROJECT_NAME}_imageProjection INCLUDE_DIRECTORIES)
+message(STATUS "imageProjection_INCLUDE_DIRS: ${imageProjection_INCLUDE_DIRS}")
 add_dependencies(${PROJECT_NAME}_imageProjection ${catkin_EXPORTED_TARGETS} ${PROJECT_NAME}_generate_messages_cpp)
 target_link_libraries(${PROJECT_NAME}_imageProjection ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OpenCV_LIBRARIES})
 
